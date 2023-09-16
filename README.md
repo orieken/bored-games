@@ -1,6 +1,7 @@
 # BoredGames
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.2.
+deployed [here](https://bored-games-ten.vercel.app/)
 
 ## Development server
 
