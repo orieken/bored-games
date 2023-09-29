@@ -1,0 +1,12 @@
+<div *ngIf="boardGames">
+  <h1>Board Games</h1>
+  <ul>
+    <li *ngFor="let game of boardGames">
+      <h2>{{ game.name }}</h2>
+      <p>Minimum Players: {{ game.min_players }}</p>
+      <p>Maximum Players: {{ game.max_players }}</p>
+      <p>Average Game Time: {{ game.avg_game_time }}</p>
+      <p>Barcode: {{ game.barcode }}</p>
+    </li>
+  </ul>
+</div>
