@@ -28,12 +28,11 @@ module.exports = function (config) {
       dir: require('path').join(__dirname, './coverage/bored-games'),
       subdir: '.',
       reporters: [
-        { type: 'html' },
         { type: 'text-summary' }
       ]
     },
     reporters: ['progress'],
-    browsers: ['Chrome'],
+    browsers: ['ChromeHeadless'],
     restartOnFileChange: true,
     singleRun: true,
   });
