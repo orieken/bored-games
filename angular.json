@@ -158,6 +158,7 @@
   },
   "cli": {
     "schematicCollections": [
+      "@cypress/schematic",
       "@angular-eslint/schematics",
       "@cypress/schematic",
       "@schematics/angular"
