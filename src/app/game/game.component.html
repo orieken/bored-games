@@ -1,6 +1,6 @@
-<div *ngIf="boardGames">
+<div>
   <h1>Board Games</h1>
-  <ul>
+  <ul *ngIf="boardGames && boardGames.length > 0">
     <li *ngFor="let game of boardGames">
       <h2>{{ game.name }}</h2>
       <p>Minimum Players: {{ game.min_players }}</p>
@@ -9,4 +9,5 @@
       <p>Barcode: {{ game.barcode }}</p>
     </li>
   </ul>
+  <p *ngIf="boardGames && boardGames.length === 0">No board games found.</p>
 </div>
