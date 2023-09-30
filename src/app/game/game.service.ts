@@ -13,7 +13,7 @@ export class GameService {
   }
 
   getBoardGames(): Observable<Game[]> {
-    return this.http.get<Game[]>('/api/board-games'); // this line on for tests
-    // return of(MOCK_GAMES); // this line on for running the server and getting games
+   return this.http.get<Game[]>('/api/board-games'); // this line on for tests
+   // return of(MOCK_GAMES); // this line on for running the server and getting games
   }
 }

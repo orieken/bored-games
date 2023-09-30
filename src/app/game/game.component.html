@@ -1,7 +1,10 @@
 <div>
   <h1>Board Games</h1>
   <ul *ngIf="boardGames && boardGames.length > 0">
-    <li *ngFor="let game of boardGames">
+    <li
+      *ngFor="let game of boardGames"
+      [attr.data-cy]='"board-game-" + game.id'
+    >
       <h2>{{ game.name }}</h2>
       <p>Minimum Players: {{ game.min_players }}</p>
       <p>Maximum Players: {{ game.max_players }}</p>
@@ -9,5 +12,8 @@
       <p>Barcode: {{ game.barcode }}</p>
     </li>
   </ul>
-  <p *ngIf="boardGames && boardGames.length === 0">No board games found.</p>
+  <p
+    [attr.data-cy]='"no-games-message"'
+    *ngIf="boardGames && boardGames.length === 0"
+  >No board games found.</p>
 </div>
