@@ -13,6 +13,7 @@ export class CoolChartComponent implements OnInit {
 
   percentage!: number;
   goalPercentage!: number;
+  barWidthPercentage: string = (this.actualValue / 1000) * 100 + '%';
 
   ngOnInit(): void {
     this.percentage = (this.actualValue / this.maxValue) * 100;

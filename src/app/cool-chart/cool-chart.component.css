@@ -3,50 +3,86 @@
   width: 100%;
   max-width: 500px; /* adjust as per your needs */
   height: 30px; /* adjust height if needed */
+  display: flex;
+  align-items: center; /* vertically centers the items in case they have different heights */
 }
 
 .percentage {
-  position: absolute;
-  left: 5px; /* adjust to position text correctly */
+  font-size: 14px; /* or any other desired styling for the percentage text */
+  z-index: 3; /* to ensure it's above the bar and goal-line, if needed */
+  position: relative; /* required for z-index to take effect */
 }
 
+/*.bar {*/
+/*  position: relative;*/
+/*  background: linear-gradient(90deg, lightblue, royalblue);*/
+/*  border-radius: 15px; !* to make it pill-shaped *!*/
+/*  height: 100%;*/
+
+/*  !* apply the mask using the image *!*/
+/*  -webkit-mask-image: url('/assets/triforce-svg.svg');*/
+/*  mask-image: url('/assets/triforce-svg.svg');*/
+
+/*  !*!* define how the mask should behave *!*!*/
+/*  !*-webkit-mask-size: cover;*!*/
+/*  !*mask-size: cover;*!*/
+
+/*  !*!* adjust the mask positioning if necessary *!*!*/
+/*  !*-webkit-mask-position: right;*!*/
+/*  !*mask-position: right;*!*/
+
+/*  !*!* ensure the mask repeats if the bar is wider than the image *!*!*/
+/*  !*-webkit-mask-repeat: no-repeat;*!*/
+/*  !*mask-repeat: no-repeat;*!*/
+
+/*  !*this will cut out the svg from the gradient *!*/
+/*  -webkit-mask-mode: alpha;*/
+/*  mask-mode: alpha;*/
+/*  -webkit-mask-composite: source-out;*/
+/*  mask-composite: subtract;*/
+/*  -webkit-mask-size: contain;*/
+/*  mask-size: contain;*/
+/*  -webkit-mask-position: center;*/
+/*  mask-position: center;*/
+/*  -webkit-mask-repeat: no-repeat;*/
+/*  mask-repeat: no-repeat;*/
+/*}*/
+
 .bar {
-  position: relative;
-  background: linear-gradient(90deg, lightblue, royalblue);
+  background: linear-gradient(90deg, lightblue, royalblue); /* or any other color */
+  position: relative; /* This is essential to position the ::after pseudo-element relative to the bar */
   border-radius: 15px; /* to make it pill-shaped */
   height: 100%;
+  margin-right: 10px; /* provides some space between the bar and the percentage */
+}
 
-  /* apply the mask using the image */
+.bar::after {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 30px; /* Adjust based on the size of the triforce image */
+  position: absolute;
+  right: 10px;
+  top: 0;
+
   -webkit-mask-image: url('/assets/triforce-svg.svg');
   mask-image: url('/assets/triforce-svg.svg');
-
-  /*!* define how the mask should behave *!*/
-  /*-webkit-mask-size: cover;*/
-  /*mask-size: cover;*/
-
-  /*!* adjust the mask positioning if necessary *!*/
-  /*-webkit-mask-position: right;*/
-  /*mask-position: right;*/
-
-  /*!* ensure the mask repeats if the bar is wider than the image *!*/
-  /*-webkit-mask-repeat: no-repeat;*/
-  /*mask-repeat: no-repeat;*/
-
-  /*this will cut out the svg from the gradient */
-  -webkit-mask-mode: alpha;
-  mask-mode: alpha;
-  -webkit-mask-composite: source-out;
-  mask-composite: subtract;
   -webkit-mask-size: contain;
   mask-size: contain;
   -webkit-mask-position: center;
   mask-position: center;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
+
+  background-color: whitesmoke; /* Same as the bar's background color */
+  z-index: 1; /* Make sure the ::after pseudo-element is on top of the bar */
 }
+
 
 .goal-line {
   position: absolute;
+  z-index: 2; /* Ensure this is higher than the bar and its ::after pseudo-element */
+
   height: 100%;
   width: 2px; /* adjust to make the line thicker or thinner */
   background: red; /* goal line color */
