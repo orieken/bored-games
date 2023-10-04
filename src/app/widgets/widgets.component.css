@@ -1,0 +1,13 @@
+.charts {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* to have a consistent gap between the charts */
+  width: 100%;
+  max-width: 600px; /* adjust as needed */
+  margin: 20px auto;
+}
+
+.chart h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}

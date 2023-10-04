@@ -1,0 +1,54 @@
+.chart-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px; /* adjust as per your needs */
+  height: 30px; /* adjust height if needed */
+}
+
+.percentage {
+  position: absolute;
+  left: 5px; /* adjust to position text correctly */
+}
+
+.bar {
+  position: relative;
+  background: linear-gradient(90deg, lightblue, royalblue);
+  border-radius: 15px; /* to make it pill-shaped */
+  height: 100%;
+
+  /* apply the mask using the image */
+  -webkit-mask-image: url('/assets/triforce-svg.svg');
+  mask-image: url('/assets/triforce-svg.svg');
+
+  /*!* define how the mask should behave *!*/
+  /*-webkit-mask-size: cover;*/
+  /*mask-size: cover;*/
+
+  /*!* adjust the mask positioning if necessary *!*/
+  /*-webkit-mask-position: right;*/
+  /*mask-position: right;*/
+
+  /*!* ensure the mask repeats if the bar is wider than the image *!*/
+  /*-webkit-mask-repeat: no-repeat;*/
+  /*mask-repeat: no-repeat;*/
+
+  /*this will cut out the svg from the gradient */
+  -webkit-mask-mode: alpha;
+  mask-mode: alpha;
+  -webkit-mask-composite: source-out;
+  mask-composite: subtract;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+.goal-line {
+  position: absolute;
+  height: 100%;
+  width: 2px; /* adjust to make the line thicker or thinner */
+  background: red; /* goal line color */
+  top: 0;
+}
